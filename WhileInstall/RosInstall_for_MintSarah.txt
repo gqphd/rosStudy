@@ -2,6 +2,7 @@
 # The BSD License
 # Copyright (c) 2014 OROCA and ROS Korea Users Group
 
+#gq fork from here : https://raw.githubusercontent.com/gqphd/rosStudy/master/WhileInstall/RosInstall_for_MintSarah.txt
 set -x
 
 function usage {
@@ -32,6 +33,7 @@ name_ros_distro=${name_ros_distro:="kinetic"}
 version=`lsb_release -sc`
 
 echo "[Checking the ubuntu version]"
+#added mint18(sarah) case
 case $version in
   "wily" | "xenial" | "sarah")
   ;;
@@ -41,8 +43,8 @@ case $version in
 esac
 
 echo "[Update & upgrade the package]"
-sudo apt-get update -qq
-sudo apt-get upgrade -qq
+sudo apt-get update
+sudo apt-get upgrade
 
 echo "[Installing chrony and setting the ntpdate]"
 sudo apt-get install -y chrony ntpdate
@@ -60,8 +62,8 @@ if [ -z "$roskey" ]; then
 fi
 
 echo "[Update & upgrade the package]"
-sudo apt-get update -qq
-sudo apt-get upgrade -qq
+sudo apt-get update
+sudo apt-get upgrade
 
 echo "[Installing ROS]"
 sudo apt-get install -y ros-$name_ros_distro-desktop-full ros-$name_ros_distro-rqt-*
