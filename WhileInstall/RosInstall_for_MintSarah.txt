@@ -33,7 +33,8 @@ name_ros_distro=${name_ros_distro:="kinetic"}
 #@gq we fake version here
 #version=`lsb_release -sc`
 #version=`echo xenial`
-version="xenial"
+#version="xenial"
+version='xenial'
 
 echo "[Checking the ubuntu version]"
 
