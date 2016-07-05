@@ -36,6 +36,9 @@ name_ros_distro=${name_ros_distro:="kinetic"}
 #version="xenial"
 version='xenial'
 
+#faking here again
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu xenial main" > /etc/apt/sources.list.d/ros-latest.list'
+
 echo "[Checking the ubuntu version]"
 
 case $version in
